@@ -1,0 +1,91 @@
+:root{
+    --bg-dark: #1a2f3a;
+
+    --logo-height: 100px;
+    --header-height: 50px;
+    --aside-width: 50px;
+    --footer-height: 40px;
+
+    --shadow:
+        0 2px 23px 0 rgba(0, 0, 0, 0.1),
+        0 2px 49px 0 rgba(0, 0, 0, 06);
+
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+
+/* Layout em Grid*/
+
+.app {
+    display: grid;
+    grid-template-columns: 5% 89% 5%;
+    grid-template-rows:
+    7%
+    80%
+    9%;
+    grid-template-areas:
+        "logo header menu"
+        "content content content"
+        "footer footer footer";
+    height: 100vh;
+    background-image: url("../assets/imgs/fundo1.jpg");
+    background-size: 100%;
+    align-items: center;
+}
+
+aside.logo {
+    grid-area: logo;
+}
+
+header.header {
+    grid-area: header;
+}
+
+aside.menu-area {
+    grid-area: menu;
+}
+
+main.content {
+    grid-area: content;
+}
+
+footer.footer {
+    grid-area: footer;
+}
+
+@media(max-width: 768px) {
+    .app {
+        grid-template-columns: 9% 80% 9%;
+        grid-template-rows:
+            7%
+            79%
+            9%;
+        grid-template-areas:
+            "logo header menu"
+            "content content content"
+            "footer footer footer";
+            background-image: url("../assets/imgs/fundo1-728.jpg");
+            background-size: 100%;
+    }
+}
+
+@media(max-width: 576px) {
+    .app {
+        grid-template-columns: 10% 77% 10%;
+        grid-template-rows:
+            10%
+            80%
+            4%;
+        grid-template-areas:
+            "logo header menu"
+            "content content content"
+            "footer footer footer";
+            height: 150vh;
+            background-image: url("../assets/imgs/fundo1-576.jpg");
+            background-size: 100%;
+    }
+}
